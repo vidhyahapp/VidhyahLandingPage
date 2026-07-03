@@ -2,16 +2,30 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Vidhyah – Your Daily Spiritual Companion</title>
-  <meta name="description" content="Vidhyah – Your Daily Spiritual Companion">
-  <meta property="og:title" content="Vidhyah – Your Daily Spiritual Companion">
-  <meta property="og:description" content="Vidhyah – Your Daily Spiritual Companion">
+  <title>Vidhyah | Your Daily Spiritual Companion</title>
+  <meta name="description" content="Build a consistent spiritual practice with Jaap, Dhyaan, Paath and Manan — one calm daily routine.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://www.vidhyah.com/">
+
+  <!-- Open Graph / WhatsApp preview -->
+  <meta property="og:title" content="Vidhyah | Your Daily Spiritual Companion">
+  <meta property="og:description" content="Build a consistent spiritual practice with Jaap, Dhyaan, Paath and Manan — one calm daily routine.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="REPLACE_WITH_LOGO_URL">
+  <meta property="og:url" content="https://www.vidhyah.com/">
+  <meta property="og:site_name" content="Vidhyah">
+  <meta property="og:image" content="https://www.vidhyah.com/og-image.png">
+  <meta property="og:image:secure_url" content="https://www.vidhyah.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Vidhyah — Spiritual discipline builder">
+
+  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Vidhyah – Your Daily Spiritual Companion">
-  <meta name="twitter:description" content="Vidhyah – Your Daily Spiritual Companion">
-  <meta name="twitter:image" content="REPLACE_WITH_LOGO_URL">
+  <meta name="twitter:title" content="Vidhyah | Your Daily Spiritual Companion">
+  <meta name="twitter:description" content="Build a consistent spiritual practice with Jaap, Dhyaan, Paath and Manan — one calm daily routine.">
+  <meta name="twitter:image" content="https://www.vidhyah.com/og-image.png">
+  <meta name="theme-color" content="#FBF7EC">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #FBF7EC; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -42,15 +56,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   const loading = document.getElementById('__bundler_loading');
   function setStatus(msg) { if (loading) loading.textContent = msg; }
 
-  // Error sink persists across replaceWith since it's on window, not the DOM.
+  // Keep runtime errors out of the public page UI.
   window.addEventListener('error', function(e) {
-    var p = document.body || document.documentElement;
-    var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
-    d.id = '__bundler_err';
-    d.style.cssText = 'position:fixed;bottom:12px;left:12px;right:12px;font:12px/1.4 ui-monospace,monospace;background:#2a1215;color:#ff8a80;padding:10px 14px;border-radius:8px;border:1px solid #5c2b2e;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto';
-    d.textContent = (d.textContent ? d.textContent + String.fromCharCode(10) : '') +
-      '[bundle] ' + (e.message || e.type) +
-      (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : '');
+    console.warn('[bundle]', e.message || e.type);
   }, true);
 
   try {
